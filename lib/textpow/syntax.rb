@@ -136,7 +136,7 @@ module Textpow
     def self.convert_file_to_table(file)
       raise "File not found: #{file}" unless File.exist?(file)
       case file
-      when /(\.tmSyntax|\.plist)$/
+      when /(\.tmSyntax|\.plist)$/i
         require 'plist'
         Plist::parse_xml(file)
       else
